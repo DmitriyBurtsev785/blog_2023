@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.views.generic.base import View
+from .models import Post
+
+class PostView(View):
+    """вывод записей"""
+    def get(self, request):
+        posts = Post.objects.all()
+        return render(request, 'blog/blog.html', {'post_list': posts})
+
