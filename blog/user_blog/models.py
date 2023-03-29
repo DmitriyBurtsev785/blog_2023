@@ -8,6 +8,7 @@ class Post(models.Model): # пост в нашем блоге, класс доч
     description = models.TextField('Текст записи')
     author = models.CharField('Имя автора', max_length=100)
     date = models.DateField('Дата публикации')
+    img = models.ImageField('Изобранжение', upload_to='image/%Y')
 
 
     def __str__(self): # красиво вводим имя заголовка и имя автора
